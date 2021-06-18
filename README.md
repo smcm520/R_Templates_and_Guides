@@ -7,3 +7,5 @@
 **2. Shell Figures *(Generic)***
 
 **3. Binomial and Ordinal Data *(Tables and Figures)***
+
+**4. ANCOVA***
