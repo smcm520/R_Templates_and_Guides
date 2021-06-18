@@ -8,4 +8,4 @@
 
 **3. Binomial and Ordinal Data *(Tables and Figures)***
 
-**4. ANCOVA***
+**4. ANCOVA**
