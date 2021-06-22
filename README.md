@@ -4,7 +4,7 @@
 
 **1. Table 1 *(Descriptives)***
 
-**2. Shell Figures *(Generic)***
+**2. Figures *(Generic, Not Analysis-Specific)***
 
 **3. Binomial and Ordinal Data *(Tables and Figures)***
 
