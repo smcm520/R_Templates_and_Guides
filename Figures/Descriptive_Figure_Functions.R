@@ -6,11 +6,15 @@
 # Date: 2020-11-09
 #####################################################################################################
 
+#####################################################################################################
+### INSTALL AND LOAD PACKAGES AS NEEDED
 #install.packages("data.table")
 library(data.table)
 #install.packages("ggplot2")
 library(ggplot2)
+#####################################################################################################
 
+#####################################################################################################
 #### FIGURE 1
 # Raw data
 # Creates a plot of variable x against variable y, by a grouping variable Group in a dataset data (e.g. score over time by treatment group)
@@ -25,8 +29,9 @@ time_trend_fig <- function(Data, X, Y, Group, Xtitle, Ytitle, Maintitle) {
 # EXAMPLE
 # DATASET: dat <- readRDS(file = '/Users/Shauna/Desktop/dat_long_01.rds')
 time_trend_fig(Data=dat, X=Time, Y=Score, Group=Treatment, Xtitle="Time", Ytitle="Score", Maintitle="Score vs. Time")
+#####################################################################################################
 
-
+#####################################################################################################
 #### FIGURE 2
 # Raw data
 # Creates a plot of variable x against variable y, stratifies into panels by a grouping variable Group in a dataset data (e.g. time against score by treatment group)
@@ -40,7 +45,9 @@ time_trend_fig_strat <- function(Data, X, Y, Group, Xtitle, Ytitle, Maintitle) {
 # EXAMPLE
 # DATASET: dat <- readRDS(file = '/Users/Shauna/Desktop/dat_long_01.rds')
 time_trend_fig_strat(Data=dat, X=Time, Y=Score, Group=Treatment, Xtitle="Time", Ytitle="Score", Maintitle="Score vs. Time")
+#####################################################################################################
 
+#####################################################################################################
 #### FIGURE 3 - Box plot 1
 # Overall success vs. failure counts by treatment assignment
 # Outcome is success/failure variable
@@ -58,7 +65,9 @@ outcome_fig_counts <- function(Data, Group, GroupLevels, GroupLabels, Outcome, O
 # DATASET: dat <- readRDS(file="dat_exploratory_01.rds")
 # Include variable names in double quotes
 outcome_fig_counts(Data=dat, Group="TXA", GroupLevels=c(0,1), GroupLabels=c("Placebo", "Treatment"), OutcomeLevels=c(0,1), OutcomeLabels=c("Failure", "Success"), Outcome="TWOHR_PAIN_FREED", Xtitle="Treatment Outcome", Ytitle="", Maintitle="Outcome, Stratified by Treatment Arm")
+#####################################################################################################
 
+#####################################################################################################
 #### FIGURE 4 - Box plot 2
 # Counts of each treatment assignment within outcome buckets
 # NOTE: For function to properly work, success/failure variable and treatment variable must be factors
@@ -77,8 +86,9 @@ outcome_fig_txcounts <- function(Data, Group, GroupLevels, GroupLabels, Outcome,
 # DATASET: dat <- readRDS(file="dat_exploratory_01.rds")
 # Include variable names in double quotes
 outcome_fig_txcounts(Data=dat, Group= "TXA", GroupLevels=c(0,1), GroupLabels=c("Placebo", "Treatment"), Outcome ="TWOHR_PAIN_FREED", OutcomeLevels=c(0,1), OutcomeLabels=c("Failure", "Success"), Xtitle="", Ytitle="", Maintitle="Outcome, Stratified by Treatment Arm", Grouptitle="Treatment")
+#####################################################################################################
 
-
+#####################################################################################################
 #### FIGURE 5 - Change in Score from Baseline Over Time
 # Creates a plot of variable x against summary variable y by a grouping variable Group in a dataset data (e.g. time against mean score change by treatment group)
 
@@ -97,7 +107,9 @@ time_trend_fig_mean <- function(Data, ID, Y, X, Group, Xtitle, Ytitle, Maintitle
 # EXAMPLE
 # DATASET: dat <- readRDS(file = '/Users/Shauna/Desktop/dat_long_01.rds')
 time_trend_fig_mean(Data=dat_change, ID= USUBJID, Y= change_from_base, X=Time, Group=Treatment, Xtitle="Time", Ytitle="Change in Score from Baseline", Maintitle="Change in Score from Baseline vs. Time", Grouptitle="Treatment")
+#####################################################################################################
 
+#####################################################################################################
 #### FIGURE 6 - Mean Change in Score from Baseline Over Time - NOTE: Still working on getting this into a function
 # Summary Data
 
@@ -127,3 +139,10 @@ dat_sum<-data.frame(times, treatment, means)
 p4 <- ggplot(dat_sum, aes(x= times, y= means,  color=treatment))
 # Add labels and mean trend lines, stratify by treatment using faceting
 p4 + geom_point()+geom_smooth(method=lm)+labs(x="Time",y="Mean Change in Score", title="Mean Change in Score vs. Time", color="Treatment")+theme(legend.position="bottom")
+#####################################################################################################
+
+#####################################################################################################
+#### REFERENCE
+]citation("data.table")
+citation("ggplot2")
+#####################################################################################################
