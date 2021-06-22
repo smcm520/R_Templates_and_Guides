@@ -1,3 +1,11 @@
+#####################################################################################################
+### META DATA
+# Purpose: Define functions to create descriptive figures 
+# Version: 3.6.1 
+# Author: Shauna McManus
+# Date: 2020-11-09
+#####################################################################################################
+
 #install.packages("data.table")
 library(data.table)
 #install.packages("ggplot2")
